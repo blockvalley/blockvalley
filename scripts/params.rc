@@ -1,0 +1,32 @@
+# Directories
+BASE_DIR="$(realpath "$(dirname "$0")/..")"
+IMAGES_DIR="$(realpath "$BASE_DIR/images")"
+CONFIG_DIR="$(realpath "$BASE_DIR/config")"
+SECRETS_DIR="$(realpath "$BASE_DIR/secrets")"
+SCRIPTS_DIR="$(realpath "$BASE_DIR/scripts")"
+ETH_DATA_DIR="/root/.ethereum"
+
+# Docker
+# # Repository
+DOCKER_ORG="blockvalley"
+
+# # Base geth image
+DOCKER_IMAGE_GETH="ethereum/client-go:stable"
+DOCKER_IMAGE_ALL="ethereum/client-go:alltools-stable"
+DOCKER_IMAGE_BOOTNODE="blockvalley/bootnode"
+
+# # Prefix to use on containers
+DOCKER_PREFIX="ethereum-net_"
+
+# # Images to build
+DOCKER_GENERIC_IMAGES=("bootnode")
+DOCKER_NETWORK_IMAGES=("node" "sealer")
+
+# Images to build with configurations
+IMAGES_CONFIG=("node" "sealer")
+IMAGES_CONFIG_FILES=("sealer.toml" "node.toml" "preload.js")
+
+# Defaults
+CONFIG_FILENAME_DEFAULT="config.toml"
+GENESIS_FILENAME_DEFAULT="genesis.json"
+NETWORK_DEFAULT="local"

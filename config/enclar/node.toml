@@ -1,0 +1,79 @@
+[Eth]
+NetworkId = 2383
+SyncMode = "full"
+NoPruning = false
+LightPeers = 100
+DatabaseCache = 512
+TrieCleanCache = 256
+TrieDirtyCache = 256
+TrieTimeout = 3600000000000
+MinerGasFloor = 8000000
+MinerGasCeil = 8000000
+MinerGasPrice = 1000000000
+MinerRecommit = 3000000000
+MinerNoverify = false
+EnablePreimageRecording = false
+EWASMInterpreter = ""
+EVMInterpreter = ""
+
+[Eth.Ethash]
+CacheDir = "ethash"
+CachesInMem = 2
+CachesOnDisk = 3
+DatasetDir = "/root/.ethash"
+DatasetsInMem = 1
+DatasetsOnDisk = 2
+PowMode = 0
+
+[Eth.TxPool]
+Locals = []
+NoLocals = false
+Journal = "transactions.rlp"
+Rejournal = 3600000000000
+PriceLimit = 1
+PriceBump = 10
+AccountSlots = 16
+GlobalSlots = 4096
+AccountQueue = 64
+GlobalQueue = 1024
+Lifetime = 10800000000000
+
+[Eth.GPO]
+Blocks = 20
+Percentile = 60
+
+[Shh]
+MaxMessageSize = 1048576
+MinimumAcceptedPOW = 2e-01
+RestrictConnectionBetweenLightClients = true
+
+[Node]
+DataDir = "/root/.ethereum"
+IPCPath = "geth.ipc"
+HTTPHost = "0.0.0.0"
+HTTPPort = 8545
+HTTPCors = ["*"]
+HTTPVirtualHosts = ["localhost"]
+HTTPModules = ["eth", "web3", "net", "admin", "debug", "db"]
+WSPort = 8546
+WSModules = ["net", "web3", "eth", "shh"]
+
+[Node.P2P]
+MaxPeers = 25
+NoDiscovery = false
+BootstrapNodes = ["enode://154c842207c5b487a29e7ed51be9073d95f7464d59b5473be8aedb164a8160c1ca86f8a1247afa159980423884019cef3b3c1073c10f608224bbd432d3792a85@194.158.92.150:30301", "enode://e76b807b790a1aa6c1266890a585026a955ca5cb8f33ca105ba300a0be3dd77799fdea41b8c90908073e6f28de7d0a9b01f20c542e78236fd700d92b11dd530a@164.132.231.87:30301"]
+BootstrapNodesV5 = ["enode://154c842207c5b487a29e7ed51be9073d95f7464d59b5473be8aedb164a8160c1ca86f8a1247afa159980423884019cef3b3c1073c10f608224bbd432d3792a85@194.158.92.150:30301", "enode://e76b807b790a1aa6c1266890a585026a955ca5cb8f33ca105ba300a0be3dd77799fdea41b8c90908073e6f28de7d0a9b01f20c542e78236fd700d92b11dd530a@164.132.231.87:30301"]
+StaticNodes = []
+TrustedNodes = []
+ListenAddr = ":30303"
+EnableMsgEvents = false
+
+[Node.HTTPTimeouts]
+ReadTimeout = 30000000000
+WriteTimeout = 30000000000
+IdleTimeout = 120000000000
+
+[Dashboard]
+Host = "localhost"
+Port = 8080
+Refresh = 5000000000
