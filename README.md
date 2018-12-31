@@ -1,4 +1,5 @@
 # Blockvalley
+![](https://readthedocs.org/projects/blockvalley/badge/?version=latest&style=plastic)
 
 Block Valley Consortium
 
@@ -25,18 +26,24 @@ enode://e76b807b790a1aa6c1266890a585026a955ca5cb8f33ca105ba300a0be3dd77799fdea41
 #### Node
 Manté una còpia del _ledger_ i verifica que totes les dades siguin correctes. A més a més, transmet totes les dades als _peers_ als quals roman connectat i permet interactuar amb la xarxa.
 
-Aixecar un node i connectar-lo a la xarxa es pot fer seguint els següents passos:
+Aixecar un node i connectar-lo a la xarxa es pot fer de dues maneres diferents:
 
+- Sense persistència de dades:
+```bash
+user@blockvalley:~$ docker run -it --rm -p 8545:8545 -p 30303:30303 --name=node blockvalley/node:enclar
+```
+
+- Amb persistència de dades:
 ```bash
 user@blockvalley:~$ export NETWORK=enclar; sh scripts/init_node.sh <nom_del_volum>
 user@blockvalley:~$ docker run -it --rm -p 8545:8545 -p 30303:30303 --mount type=volume,source=<nom_del_volum>,destination=/root/.ethereum --name=node blockvalley/node:enclar
 ```
+> El volum de docker serveix per a persistir les dades  que genera i/o usa un container. Si no es crea un volum a part on guardar totes les dades, aquestes desapareixen amb el container.
 
 #### Sealer
 Fa totes les funcions anteriors i a més, té com a funció principal generar els nous blocs de la cadena.És l'encarregat de signar els nous blocs.
 
->
-El sealer de BTC Assessors té l'adreça: ```0x5ea1e4D01187347fF9b3BC672f4A628c9c75d007```
+> El sealer de BTC Assessors té l'adreça: ```0x5ea1e4D01187347fF9b3BC672f4A628c9c75d007```
 
 ```bash
 # Properament instruccions per a poder montar-ne un.
@@ -56,4 +63,4 @@ ___
 Properament es proporcionaran la resta d'eines en aquest mateix lloc.
 
 ---
-_Totes les proves s'han realitzat sobre Linux (Debian / Arch Linux) i Mac OS X._
+_Totes les proves s'han realitzat sobre Linux (Debian / Arch Linux / Raspbian) i Mac OS X._
