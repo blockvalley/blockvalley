@@ -1,5 +1,5 @@
 # Blockvalley
-![](https://readthedocs.org/projects/blockvalley/badge/?version=latest&style=plastic)
+[![](https://readthedocs.org/projects/blockvalley/badge/?version=latest&style=plastic)](https://blockvalley.readthedocs.io/ca/latest/)
 
 Block Valley Consortium
 
