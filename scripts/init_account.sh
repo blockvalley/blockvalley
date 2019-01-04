@@ -85,7 +85,8 @@ if docker exec "$container_id" \
 	geth account import --password "/root/$password_filename" \
 	    "/root/$privkey_filename" > "$tmp_file" 2> /dev/null; then
     # Display address
-    cut -d'{' -f2 "$tmp_file" | tr -d '}'
+    address="$(cut -d'{' -f2 "$tmp_file" | tr -d '}')"
+    echo "0x$address"
 	clean
 	exit 0
 else
