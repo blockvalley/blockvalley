@@ -24,7 +24,7 @@ DOCKER_NETWORK_IMAGES=("node" "sealer")
 
 # Images to build with configurations
 IMAGES_CONFIG=("node" "sealer")
-IMAGES_CONFIG_FILES=("sealer.toml" "node.toml" "preload.js")
+IMAGES_CONFIG_FILES=("sealer.toml" "node.toml")
 
 # Defaults
 CONFIG_FILENAME_DEFAULT="config.toml"
