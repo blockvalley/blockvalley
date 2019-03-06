@@ -1,0 +1,21 @@
+[Unit]
+Description=Geth node for %i network
+After=syslog.target network.target
+
+[Service]
+User=geth
+Group=geth
+Type=simple
+ExecStart=/usr/local/bin/geth --config /ethereum/%i/config/node.toml --netrestrict "46.172.224.0/19,80.80.84.0/22,80.80.92.0/22,85.94.160.0/19,91.187.64.0/19,109.111.96.0/19,185.4.52.0/22,185.33.0.0/22,185.87.36.0/22,185.87.40.0/21,194.158.64.0/19,164.132.231.87/32"
+
+KillMode=process
+KillSignal=SIGINT
+TimeoutStopSec=90
+Restart=on-failure
+RestartSec=10s
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=geth@%i
+
+[Install]
+WantedBy=multi-user.target
