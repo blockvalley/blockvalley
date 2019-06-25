@@ -8,7 +8,7 @@ RUN git clone https://gitlab.com/blockvalley/ethereum-blockchain-explorer.git
 
 WORKDIR "/opt/ethereum-blockchain-explorer"
 
-RUN git checkout aa6e4e3b53a6c1ae3642ebc46ad7811ad9bd211a
+RUN git checkout cef27fb10be40f69cc5ff423b34cc42b10cd6dd7
 RUN npm install
 
 CMD npm run start
