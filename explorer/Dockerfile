@@ -6,7 +6,7 @@ RUN apk add --update git make g++ && git clone https://gitlab.com/blockvalley/et
 
 WORKDIR "/opt/ethereum-blockchain-explorer"
 
-RUN git checkout 9ec721cd6443f5119eba7294d7ca9bf4a8920563
+RUN git checkout aa6e4e3b53a6c1ae3642ebc46ad7811ad9bd211a
 RUN npm install
 
 CMD npm run start
