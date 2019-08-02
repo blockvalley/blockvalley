@@ -20,5 +20,5 @@ DEFAULT_LENGTH=16
 [ -z "$1" ] && length="$DEFAULT_LENGTH" || length="$1"
 
 # Generate password
-LC_ALL=C tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' \
+LC_ALL=C tr -dc 'A-Za-z0-9!#$%()*+,-./:[]^_~' \
     < "$RANDOMNESS" | head -c "$length"

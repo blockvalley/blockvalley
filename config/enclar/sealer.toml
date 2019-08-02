@@ -52,11 +52,11 @@ DataDir = "/ethereum/enclar/data"
 IPCPath = "geth.ipc"
 HTTPHost = "0.0.0.0"
 HTTPPort = 8545
-HTTPCors = ["\\*"]
+HTTPCors = ["*"]
 HTTPVirtualHosts = ["localhost"]
-HTTPModules = ["eth", "web3", "net", "admin", "debug", "db"]
+HTTPModules = ["net", "web3", "eth"]
 WSPort = 8546
-WSModules = ["net", "web3", "eth", "shh"]
+WSModules = ["net", "web3", "eth"]
 
 [Node.P2P]
 MaxPeers = 25
